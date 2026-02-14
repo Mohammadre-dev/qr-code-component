@@ -59,8 +59,8 @@ body {
   flex: 1;
   display: grid;
   place-items: center;
-  padding-block: clamp(1rem, 5vh, 1.5rem);
-  padding-inline: clamp(1rem, 5vw, 1.5rem);
+  padding-block: clamp(1rem, 5vh, 2rem);
+  padding-inline: clamp(1rem, 5vw, 2rem);
 }
 
 .card {
@@ -112,9 +112,9 @@ body {
 }
 
 .attribution {
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   text-align: center;
-  padding-block: 1.5rem;
+  padding-block: clamp(1rem, 3vh, 1.5rem);
   padding-inline: 1rem;
   color: var(--color-slate-500);
   margin-block-start: auto;
@@ -125,7 +125,7 @@ body {
   gap: 0.25rem;
 }
 
-@media (min-width: 28.125em) {
+@media (min-width: 30em) {
   .attribution {
     flex-direction: row;
     gap: 0.5rem;
