@@ -30,13 +30,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }
 
@@ -55,7 +59,7 @@ body {
   flex: 1;
   display: grid;
   place-items: center;
-  padding: clamp(1rem, 5%, 1.5rem);
+  padding: clamp(1rem, 5vw, 1.5rem);
 }
 
 .card {
@@ -88,7 +92,8 @@ body {
 }
 
 .card__content {
-  padding: 1.5rem 0.75rem 0.5rem;
+  padding-block: clamp(1rem, 5vh, 1.5rem);
+  padding-inline: 0.75rem;
 }
 
 .card__title {
@@ -110,6 +115,7 @@ body {
   text-align: center;
   padding: 1.5rem;
   color: var(--color-slate-500);
+  margin-top: auto;
 }
 
 .attribution a {
