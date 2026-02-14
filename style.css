@@ -1,23 +1,20 @@
 :root {
-  /* Colors */
   --color-white: hsl(0, 0%, 100%);
   --color-slate-300: hsl(212, 45%, 89%);
   --color-slate-500: hsl(216, 15%, 48%);
   --color-slate-900: hsl(218, 44%, 22%);
+  --color-accent: hsl(218, 44%, 40%);
 
-  /* Typography */
   --font-family-base: "Outfit", sans-serif;
-  --font-size-base: 0.9375rem; /* 15px */
-  --font-size-title: 1.375rem; /* 22px */
+  --font-size-base: 0.9375rem;
+  --font-size-title: 1.375rem;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
-  /* Spacing & Borders */
-  --radius-large: 1.25rem; /* 20px */
-  --radius-medium: 0.75rem; /* 12px */
-  --spacing-card-p: 1rem; /* 16px */
+  --radius-large: 1.25rem;
+  --radius-medium: 0.75rem;
+  --spacing-card-p: 1rem;
 
-  /* Shadows */
   --shadow-card: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.1);
 }
 
@@ -30,6 +27,17 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -47,12 +55,12 @@ body {
   flex: 1;
   display: grid;
   place-items: center;
-  padding: 1.5rem;
+  padding: clamp(1rem, 5%, 1.5rem);
 }
 
 .card {
   background-color: var(--color-white);
-  max-width: 20rem; /* 320px */
+  max-width: 20rem;
   width: 100%;
   padding: var(--spacing-card-p);
   border-radius: var(--radius-large);
@@ -88,7 +96,7 @@ body {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
 }
 
 .card__description {
@@ -112,6 +120,6 @@ body {
 }
 
 .attribution a:hover {
-  color: hsl(218, 44%, 40%);
+  color: var(--color-accent);
   text-decoration: underline;
 }
